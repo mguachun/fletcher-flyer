@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fletcher Flyer</title>
+    <link href="index.css" rel="stylesheet" />
+</head>
+<script>
+    var pages = {
+        'home' :   `
+        <div class="home">
+            <h1>Welcome to the Fletcher Flyer </h1>
+            <br>
+             This is a blog by me, Fletcher the dog. <br>
+             My mom thought it was about time I have my own blog 
+             <br>to share my adventures.
+             <br>
+             <br>
+             Unlike the Disney hit show "Dog with a Blog", I cannot talk.
+             <br>
+             But I do have remarkable typing skills, soulful eyes,<br> and an eye for hats. <br>
+           
+         
+            </div>
+            <img class="hat" src="./images/beanie.png"> 
+            `,
+        'about' : `
+       <div class="about">
+
+        <br>Hi, I'm Fletcher! <br>
+        <img class="hat" src="./images/Fletchy_hat.png"> 
+        I'm 4 years old and I'm a pitbull, beagle mix! <br>I was rescued
+        by my family from Bidawee Animal Shelter  <br> in Manhattan, NY. I love spending time
+        with my people, playing outside, <br> sunbathing, and eating treatos. 
+        </div>
+       `,
+        'services' :  `Services page`,
+        'contact': `
+        <div class="contact">
+            <h1>CONTACT</h1>
+        </div>
+        `
+    };
+
+    window.addEventListener("scroll", () => {
+    let header = document.querySelector(".header");
+    header.classList.toggle("sticky", window.scrollY > 0);
+    });
+
+
+    function getPageContent(page) {
+        var contentToReturn;
+        switch(page){
+            case 'home': 
+            contentToReturn = pages.home;
+            break;
+            case 'about': 
+            contentToReturn = pages.about;
+            break;
+            case 'services': 
+            contentToReturn = pages.services;
+            break;
+            case 'contact': 
+            contentToReturn = pages.contact;
+            break;
+            default: 
+            contentToReturn = pages.home;
+            break;
+        }
+        document.getElementById('content').innerHTML = contentToReturn
+    }
+    </script>
+<body onload="getPageContent('home');">
+    <header class="header">
+        <a href="./index.html" class="header_logo">Fletcher Flyer</a>
+        <ul class="header_nav">
+            <li class="header_list" style="line-height: 50px;"><a href="#" class="header_link" onclick="getPageContent('home')">Home</a></li>
+            <li class="header_list" style="line-height: 50px;"><a href="#" class="header_link"  onclick="getPageContent('about')">About</a></li>
+            <li class="header_list" style="line-height: 50px;"><a href="#" class="header_link"  onclick="getPageContent('contact')">Contact</a></li>
+            <li class="header_list" style="line-height: 50px;"><a href="#" class="header_link"  onclick="getPageContent('services')">Services</a></li>
+        </ul>
+
+    </header>
+    <section class="banner"></section>
+  
+    <div id="content"> </div>
+
+
+
+</body>
+</html>
