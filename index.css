@@ -115,6 +115,25 @@
     margin-top: -80px;
 }
 
+.hunt{
+  transform: scale(0.8);
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.model{
+  transform: scale(0.8);
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.services{
+  text-align: center;
+}
+
+
 
 
 .about{
